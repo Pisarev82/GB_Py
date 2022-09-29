@@ -3,8 +3,14 @@
 
 # - 6782 -> 23
 # - 0,56 -> 11
-sum1 = 0
-for i in "6782":
-    sum += int(i)
 
-print(sum("6782".split()))
+data1 = input("Введите число ")
+
+#Короткое решение
+print(sum([int(i) for i in data1 if i.isdigit()]))
+
+#Стандартное решение
+numbers = []
+for i in data1:
+    if i.isdigit(): numbers.append(int(i))
+print(sum(numbers))
