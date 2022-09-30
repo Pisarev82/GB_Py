@@ -11,9 +11,9 @@ s_1 = input('Введите вторую строку: ')
 
 
 count = 0
-for i in s:
-    for j in s_1:
+for i in name1:
+    for j in text:
         if i == j:
             count += 1
-
-print(count)
+if count >=5 :
+    print(count)
