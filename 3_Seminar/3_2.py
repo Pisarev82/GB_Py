@@ -20,18 +20,24 @@
 data_list  = ['osfjwoiergwoignaewpjofwoeijfnwfonewfoignewtowenffnoeiwowjfninoiwfen', 'anton', 'aoooooooooontooooo', 'elelelelelelelelelel', 'ntoneeee', 'tonee', '253235235a5323352n25235352t253523523235oo235523523523n', 'antoooooooooooooooooooooooooooooooooooooooooooooooooooon', 'unton']
 name1 = "anton"
 
-def find_word(data, name1):
+def find_word(name1, data):
     result = []
+    count = 0
     for i in data:
-        for j in range(len(result), len(name1)):
+        for j in range(count, len(name1)):
+            count += 1
             if i == name1[j]:
                 result.append(i)
                 break
-    if result == list(name1) :
+    print(result)
+    if result == list(data) :
         return True
     else: 
         return False
 
 for i in range(len(data_list)):
     if find_word(data_list[i], name1): print(i+1, end=", ")
+
+# print(find_word('aoooooooooontooooo', name1))
+
 
