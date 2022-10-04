@@ -1,3 +1,14 @@
-list = [1, "v", 2, 3, 4, "a"]
-tuple = (1, 2, 3, 4)
-distr = {"name":"Nik", "age": 40, 1:2, 2:"Two"}
+
+from jinja2 import Template
+
+name = "Nikolay"
+
+tm = Template("Hello {{name}}")
+msg = tm.render(name=name)
+
+print(msg)
+
+
+
+while round(num,) != num:
+    num *= 10
