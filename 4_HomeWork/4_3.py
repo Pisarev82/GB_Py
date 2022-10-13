@@ -14,5 +14,11 @@ for i in range(len(list)):
         count = 0
 print(list1)
 
+# для дз 6 
+list = [5, 6, 8, 5, 8, 10, 5]
+print(list(filter(lambda x: spisok.count(x) == 1, list)))
+
+
+
 
 
