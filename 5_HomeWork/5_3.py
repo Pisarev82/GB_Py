@@ -27,26 +27,23 @@ def cheak_col (cr, col):
     return count
 
 def cheak_diag_1 (cr):
-    count = 0
-    for i in range(game_field_size):
-        if game_field[i][i] == cr: count += 1
-        return count
+    count_list = [1 for i in range(game_field_size) if game_field[i][i] == cr]
+    return sum(count_list)
 
 def cheak_diag_2 (cr):
-    count = 0
-    for i in range(game_field_size):
-        if game_field[i][-i-1] == cr: count += 1
-        return count
+    count_list = [1 for i in range(game_field_size) if game_field[-i-1][i] == cr]
+    return sum(count_list)
 
 def find_winer (cr):
     for i in range(game_field_size):
         if cheak_col(cr, i) == game_field_size or \
-            cheak_row (cr, i) == game_field_size or \
-            cheak_diag_1 (cr) == game_field_size or \
-            cheak_diag_2 (cr) == game_field_size:
-                print(*game_field, sep="\n")
-                print("Выиграл ", cr )
-                return True
+           cheak_row (cr, i) == game_field_size or \
+           cheak_diag_1 (cr) == game_field_size or \
+           cheak_diag_2 (cr) == game_field_size:
+            print(*game_field, sep="\n")
+            print("Выиграл ", cr )
+            return True
+    print(cheak_diag_2 (cr))
     count = 0
     for i in game_field:
         for j in i:
@@ -55,6 +52,7 @@ def find_winer (cr):
         print(*game_field, sep="\n")
         print("Ничья")
         return True
+    
 
 def find_empty_in_row (row_or_col):
     for i in range(game_field_size):
